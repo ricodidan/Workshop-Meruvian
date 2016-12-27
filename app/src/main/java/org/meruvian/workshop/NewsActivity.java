@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AlertDialog;
@@ -12,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -19,6 +21,7 @@ import android.widget.Toast;
 import org.meruvian.workshop.adapter.NewsAdapter;
 import org.meruvian.workshop.content.database.adapter.NewsDatabaseAdapter;
 import org.meruvian.workshop.entity.News;
+import org.meruvian.workshop.kategori.activity_kategori;
 import org.meruvian.workshop.rest.RestVariables;
 import org.meruvian.workshop.service.TaskService;
 import org.meruvian.workshop.task.NewsDeleteTask;
@@ -38,6 +41,7 @@ public class NewsActivity extends ActionBarActivity implements TaskService {
     EditText content, title;
     NewsPostTask newsPostTask;
     NewsPutTask newsPutTask;
+    Button kategoriId;
     private ListView listNews;
     private NewsAdapter newsAdapter;
     private News news;
@@ -53,6 +57,7 @@ public class NewsActivity extends ActionBarActivity implements TaskService {
         listNews = (ListView) findViewById(R.id.list_news);
         content = (EditText) findViewById(R.id.edit_content);
         title = (EditText) findViewById(R.id.edit_title);
+        kategoriId = (Button) findViewById(R.id.kategori);
 
         newsDatabaseAdapter = new NewsDatabaseAdapter(this);
         newsAdapter = new NewsAdapter(this, new ArrayList<News>());
@@ -64,6 +69,13 @@ public class NewsActivity extends ActionBarActivity implements TaskService {
                 dialogList(i);
 
                 return true;
+            }
+        });
+
+        kategoriId.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(NewsActivity.this, activity_kategori.class));
             }
         });
 

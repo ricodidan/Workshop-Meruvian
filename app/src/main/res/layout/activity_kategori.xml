@@ -4,63 +4,62 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="10dp">
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="left"
         android:layout_marginTop="10dp"
-        android:text="@string/title" />
+        android:text="Category" />
+
     <EditText
-        android:id="@+id/edit_title"
+        android:id="@+id/edit_kategori"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="left"
         android:layout_marginTop="10dp"
-        android:text="@string/content" />
+        android:text="Sub Category" />
+
     <EditText
-        android:id="@+id/edit_content"
+        android:id="@+id/edit_subkategori"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="top"
-        android:maxLines="5"
-        android:minLines="3" />
-
-    <Button
-        android:id="@+id/kategori"
-        android:layout_width="220dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:text="CATEGORY" />
+        android:gravity="top" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="@string/news_list"
-        android:textStyle="bold"/>
+        android:text="Category List"
+        android:textStyle="bold" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <View
             android:layout_width="0px"
             android:layout_height="1px"
             android:layout_weight=".4"
-            android:background="@android:color/black"/>
+            android:background="@android:color/black" />
+
         <View
             android:layout_width="0px"
             android:layout_height="1px"
             android:layout_weight=".6"
-            android:background="@android:color/transparent"/>
+            android:background="@android:color/transparent" />
     </LinearLayout>
+
     <ListView
-        android:id="@+id/list_news"
+        android:id="@+id/list_news_kategori"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"/>
+        android:layout_marginTop="5dp" />
 </LinearLayout>
