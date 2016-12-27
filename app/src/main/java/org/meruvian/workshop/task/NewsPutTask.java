@@ -2,26 +2,22 @@ package org.meruvian.workshop.task;
 
 import android.content.Context;
 import android.os.AsyncTask;
+
 import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPut;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicHeader;
-import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.meruvian.workshop.R;
-import org.meruvian.workshop.rest.RestVariables;
 import org.meruvian.workshop.entity.News;
+import org.meruvian.workshop.rest.RestVariables;
 import org.meruvian.workshop.service.ConnectionUtil;
 import org.meruvian.workshop.service.TaskService;
+
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
 
 /**
@@ -43,7 +39,7 @@ public class NewsPutTask extends AsyncTask<News, Void, JSONObject> {
     protected JSONObject doInBackground(News... params) {
         JSONObject json = new JSONObject();
         try {
-            json.put("id", 0);
+            json.put("id", params[0].getId());
             json.put("title", params[0].getTitle());
             json.put("content", params[0].getContent());
             json.put("createDate", 0);

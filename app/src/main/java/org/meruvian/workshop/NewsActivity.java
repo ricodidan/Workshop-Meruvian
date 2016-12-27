@@ -1,4 +1,5 @@
 package org.meruvian.workshop;
+
 import android.app.ProgressDialog;
 import android.app.SearchManager;
 import android.content.Context;
@@ -14,7 +15,7 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
-import org.meruvian.workshop.R;
+
 import org.meruvian.workshop.adapter.NewsAdapter;
 import org.meruvian.workshop.content.database.adapter.NewsDatabaseAdapter;
 import org.meruvian.workshop.entity.News;
@@ -33,15 +34,15 @@ import java.util.List;
  * Created by ludviantoovandi on 25/02/15.
  */
 public class NewsActivity extends ActionBarActivity implements TaskService {
+    NewsDatabaseAdapter newsDatabaseAdapter;
+    EditText content, title;
+    NewsPostTask newsPostTask;
+    NewsPutTask newsPutTask;
     private ListView listNews;
     private NewsAdapter newsAdapter;
     private News news;
-    NewsDatabaseAdapter newsDatabaseAdapter;
-    EditText content, title;
     private ProgressDialog progressDialog;
     private NewsGetTask newsGetTask;
-    private NewsPostTask newsPostTask;
-    private NewsPutTask newsPutTask;
     private NewsDeleteTask newsDeleteTask;
 
     @Override
